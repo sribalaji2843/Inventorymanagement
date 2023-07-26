@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Movements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="movements-title">Product Movements</h1>
+        <form method="POST">
+            <input type="text" name="timestamp" required placeholder="Timestamp">
+            <input type="text" name="from_location" placeholder="From Location">
+            <input type="text" name="to_location" placeholder="To Location">
+            <input type="text" name="product_id" required placeholder="Product ID">
+            <input type="number" name="qty" required placeholder="Quantity">
+            <button type="submit">Add Movement</button>
+        </form>
+        <table>
+            <tr>
+                <th>Movement ID</th>
+                <th>Timestamp</th>
+                <th>From Location</th>
+                <th>To Location</th>
+                <th>Product</th>
+                <th>Quantity</th>
+            </tr>
+            {% for movement in movements %}
+            <tr>
+                <td>{{ movement[0] }}</td>
+                <td>{{ movement[1] }}</td>
+                <td>{{ movement[2] }}</td>
+                <td>{{ movement[3] }}</td>
+                <td>{{ movement[4] }}</td>
+                <td>{{ movement[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

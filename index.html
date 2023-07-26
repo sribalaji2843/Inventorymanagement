@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="index-title">Welcome to Inventory Management</h1>
+        <ul class="nav-list">
+            <li><a href="{{ url_for('products') }}">View/Add Products</a></li>
+            <li><a href="{{ url_for('locations') }}">View/Add Locations</a></li>
+            <li><a href="{{ url_for('movements') }}">View/Add Product Movements</a></li>
+            <li><a href="{{ url_for('report') }}">View Report</a></li>
+        </ul>
+    </div>
+</body>
+</html>
